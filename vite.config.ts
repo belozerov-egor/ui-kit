@@ -19,7 +19,6 @@ export default defineConfig({
       // into your library
       external: ['jsx-runtime.js', ...Object.keys(dependencies), ...Object.keys(devDependencies)],
     },
-    sourcemap: true,
     target: 'esnext',
   },
 })
