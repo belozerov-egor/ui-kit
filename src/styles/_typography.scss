@@ -1,22 +1,22 @@
 :root {
-  /* globals */
-  --font-family: system-ui, sans-serif;
+  --font-family-primary: 'Inter', sans-serif;
 
-  /* font-sizes */
-  --font-size-xs: 12px;
-  --font-size-s: 14px;
-  --font-size-m: 16px;
-  --font-size-l: 18px;
-  --font-size-xl: 20px;
-  --font-size-xxl: 22px;
-
-  /* line-heights */
+  // line heights
+  --line-height-s: 16px;
   --line-height-m: 24px;
-  --line-height-xl: 36px;
+  --line-height-l: 36px;
 
-  /* font-weights */
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semi-bold: 600;
-  --font-weight-bold: 700;
+  // font sizes
+  --font-size-xs: 0.75rem;
+  --font-size-s: 0.875rem;
+  --font-size-m: 1rem;
+  --font-size-l: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-xxl: 1.625rem;
+
+  // font weights
+  --font-weight-s: 400;
+  --font-weight-m: 500;
+  --font-weight-l: 600;
+  --font-weight-xl: 700;
 }
