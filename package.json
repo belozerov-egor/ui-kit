@@ -1,7 +1,7 @@
 {
   "name": "@belozerov-egor/ui-libs",
   "private": false,
-  "version": "0.0.6",
+  "version": "0.0.7",
   "license": "MIT",
   "type": "module",
   "main": "dist/index.js",
@@ -29,6 +29,7 @@
     "@radix-ui/react-slider": "^1.1.2",
     "@radix-ui/react-tabs": "^1.0.4",
     "clsx": "^2.0.0",
+    "framer-motion": "^10.17.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.46.1"
