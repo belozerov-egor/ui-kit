@@ -3,7 +3,7 @@ import { clsx } from 'clsx'
 import s from './Pagination.module.scss'
 
 import { ArrowIosBack, ArrowIosForward } from '..'
-import { Select } from '../select'
+import { SelectBox } from '../select'
 import { Typography } from '../typography'
 import { usePagination } from './usePagination'
 
@@ -183,7 +183,7 @@ export const PerPageSelect = ({ onPerPageChange, perPageOptions }: PerPageSelect
       <Typography className={classNames.show} variant={'regular14'}>
         Show
       </Typography>
-      <Select
+      <SelectBox
         className={classNames.select}
         defaultValue={perPageOptions[0].value}
         onValueChange={onPerPageChange}
