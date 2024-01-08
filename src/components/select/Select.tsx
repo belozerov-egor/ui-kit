@@ -1,13 +1,12 @@
 import { ReactNode } from 'react'
 import { FieldError } from 'react-hook-form'
 
-import * as SelectBox from '@radix-ui/react-select'
+import * as Select from '@radix-ui/react-select'
 import { clsx } from 'clsx'
 
-import s from './Select.module.scss'
+import s from './SelectBox.module.scss'
 
-import { ArrowIosDown } from '../icon'
-import { Typography } from '../typography'
+import { ArrowIosDown, Typography } from '..'
 
 export type SelectBoxProps = {
   className?: string
@@ -24,7 +23,7 @@ export type SelectBoxProps = {
   value?: any
 }
 
-export const Select = (props: SelectBoxProps) => {
+export const SelectBox = (props: SelectBoxProps) => {
   const {
     className,
     defaultValue,
@@ -44,14 +43,14 @@ export const Select = (props: SelectBoxProps) => {
     <Typography as={'label'} color={'secondary'} variant={'regular14'}>
       {label}
 
-      <SelectBox.Root
+      <Select.Root
         defaultValue={defaultValue}
         disabled={disabled}
         onValueChange={onValueChange}
         required={required}
         value={value}
       >
-        <SelectBox.Trigger
+        <Select.Trigger
           aria-label={'select'}
           asChild
           className={`${disabled ? s.triggerDisabled : s.trigger} ${className}`}
@@ -59,37 +58,33 @@ export const Select = (props: SelectBoxProps) => {
         >
           <div>
             {value ? (
-              <SelectBox.Value placeholder={placeholder}>
+              <Select.Value placeholder={placeholder}>
                 {value.img && value.img}
                 {value.description && <Typography>{value.description}</Typography>}
-              </SelectBox.Value>
+              </Select.Value>
             ) : (
-              <SelectBox.Value placeholder={placeholder} />
+              <Select.Value placeholder={placeholder} />
             )}
             <ArrowIosDown className={disabled ? s.iconDisabled : s.icon} />
           </div>
-        </SelectBox.Trigger>
-        <SelectBox.Portal>
-          <SelectBox.Content
+        </Select.Trigger>
+        <Select.Portal>
+          <Select.Content
             className={clsx(s.content, { [s.height]: height })}
             position={'popper'}
             sideOffset={-1}
           >
-            <SelectBox.Viewport>
+            <Select.Viewport>
               {options.map(el => (
-                <SelectBox.Item
-                  className={s.item}
-                  key={el.value}
-                  value={idValue ? el.id : el.value}
-                >
+                <Select.Item className={s.item} key={el.value} value={idValue ? el.id : el.value}>
                   {el?.img}
-                  <SelectBox.ItemText>{el.description ?? el.value}</SelectBox.ItemText>
-                </SelectBox.Item>
+                  <Select.ItemText>{el.description ?? el.value}</Select.ItemText>
+                </Select.Item>
               ))}
-            </SelectBox.Viewport>
-          </SelectBox.Content>
-        </SelectBox.Portal>
-      </SelectBox.Root>
+            </Select.Viewport>
+          </Select.Content>
+        </Select.Portal>
+      </Select.Root>
       <Typography color={'error'} variant={'regular16'}>
         {errorMessage?.message}
       </Typography>
