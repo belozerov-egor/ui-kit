@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { Select } from './Select'
+import { SelectBox } from './Select'
 
 const meta = {
   argTypes: { onValueChange: { action: 'select changes' } },
-  component: Select,
+  component: SelectBox,
   tags: ['autodocs'],
   title: 'Components/Select',
-} satisfies Meta<typeof Select>
+} satisfies Meta<typeof SelectBox>
 
 export default meta
 type Story = StoryObj<typeof meta>
