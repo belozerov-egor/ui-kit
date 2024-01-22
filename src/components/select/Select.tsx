@@ -20,6 +20,7 @@ export type SelectBoxProps = {
   options: any[]
   placeholder?: ReactNode
   required?: boolean
+  selectContentClassName?: string
   value?: any
 }
 
@@ -36,6 +37,7 @@ export const SelectBox = (props: SelectBoxProps) => {
     options,
     placeholder,
     required,
+    selectContentClassName,
     value,
   } = props
 
@@ -70,7 +72,7 @@ export const SelectBox = (props: SelectBoxProps) => {
         </Select.Trigger>
         <Select.Portal>
           <Select.Content
-            className={clsx(s.content, { [s.height]: height })}
+            className={clsx(s.content, selectContentClassName, { [s.height]: height })}
             position={'popper'}
             sideOffset={-1}
           >
