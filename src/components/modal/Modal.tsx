@@ -1,18 +1,18 @@
 import { ComponentProps } from 'react'
 
 import {
-  Close,
   Dialog,
   DialogContent,
   DialogOverlay,
   DialogPortal,
   DialogTitle,
 } from '@radix-ui/react-dialog'
+import { clsx } from 'clsx'
 import { motion } from 'framer-motion'
 
 import s from './Modal.module.scss'
 
-import { ArrowIosBack, Button, Typography } from '..'
+import { ArrowIosBack, Button, Close, Typography } from '..'
 
 type Props = {
   buttonBlockClassName?: string
@@ -65,13 +65,17 @@ export const Modal = (props: Props) => {
     onClose?.()
   }
 
+  const finalDialogContent = clsx(className, s.content)
+  const finalContentBlock = clsx(contentBoxClassName, s.contentBlock)
+  const finalButtonBlock = clsx(buttonBlockClassName, s.buttonBlock)
+
   return (
     <Dialog onOpenChange={handleModalClosed} open={open}>
       {open && (
         <DialogPortal>
           <motion.div animate={'visible'} initial={'hidden'} variants={MODAL_ANIMATION}>
             <DialogOverlay className={isOverlay ? s.overlay : s.noOverlay} />
-            <DialogContent className={`${s.content} ${className}`}>
+            <DialogContent className={finalDialogContent}>
               {showHeader && (
                 <header className={s.header}>
                   {prevContent && <ArrowIosBack className={s.prevContent} onClick={prevClick} />}
@@ -90,8 +94,8 @@ export const Modal = (props: Props) => {
                   {showCloseButton && <Close className={s.closeButton} onClick={onClose} />}
                 </header>
               )}
-              <div className={`${s.contentBox} ${contentBoxClassName}`}>{children}</div>
-              <div className={buttonBlockClassName}>
+              <div className={finalContentBlock}>{children}</div>
+              <div className={finalButtonBlock}>
                 {titleFirstButton && (
                   <Button onClick={callBack} variant={'outline'}>
                     <Typography className={s.firstButtonText} variant={'h3'}>

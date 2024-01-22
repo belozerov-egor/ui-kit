@@ -52,7 +52,7 @@
   }
 }
 
-.contentBox {
+.contentBlock {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -82,4 +82,11 @@
     transform: scale(1.2);
     transition: 0.2s ease-in-out;
   }
+}
+
+.buttonBlock {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 0 1.5rem 2.25rem 0;
 }
