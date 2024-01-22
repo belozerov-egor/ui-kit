@@ -1,16 +1,19 @@
-import { ReactNode, useState } from 'react'
+import { JSX, ReactNode, useState } from 'react'
 
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
+import { clsx } from 'clsx'
 import { motion } from 'framer-motion'
 
 import s from './DropDownMenu.module.scss'
 
 type Props = {
   align?: 'center' | 'end' | 'start'
+  isOpenAfterItemClick?: boolean
   items?: {
     component: JSX.Element
     id: number
   }[]
+  onItemClick?: () => void
   side?: 'bottom' | 'left' | 'right' | 'top'
   trigger?: ReactNode
 }
@@ -34,7 +37,16 @@ const motionItem = {
   },
 }
 
-export const DropDownMenu = ({ align = 'start', items, side = 'top', trigger }: Props) => {
+export const DropDownMenu = (props: Props) => {
+  const {
+    align = 'start',
+    isOpenAfterItemClick = true,
+    items,
+    onItemClick,
+    side = 'top',
+    trigger,
+  } = props
+
   const [isOpen, setIsOpen] = useState(false)
 
   const itemsForRender = items?.map((item, index) => {
@@ -60,7 +72,8 @@ export const DropDownMenu = ({ align = 'start', items, side = 'top', trigger }: 
     setIsOpen(false)
   }
   const onClickHandler = () => {
-    setIsOpen(true)
+    setIsOpen(isOpenAfterItemClick)
+    onItemClick?.()
   }
   const onOpenChangeHandler = (e: boolean) => {
     setIsOpen(e)
@@ -69,13 +82,14 @@ export const DropDownMenu = ({ align = 'start', items, side = 'top', trigger }: 
     setIsOpen(true)
   }
 
+  const finalIconButton = clsx(s.iconButton, {
+    [s.activeTrigger]: isOpen,
+  })
+
   return (
     <DropdownMenu.Root onOpenChange={onOpenChangeHandler} open={isOpen}>
       <DropdownMenu.Trigger asChild onClick={onOpenHandler}>
-        <button
-          aria-label={'Customise options'}
-          className={`${s.iconButton} ${isOpen ? s.activeTrigger : ''}`}
-        >
+        <button aria-label={'Customise options'} className={finalIconButton}>
           {trigger}
         </button>
       </DropdownMenu.Trigger>
