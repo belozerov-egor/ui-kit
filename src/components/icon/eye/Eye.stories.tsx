@@ -3,15 +3,15 @@ import { Meta, StoryObj } from '@storybook/react'
 import { Eye } from './Eye'
 
 const meta = {
-  title: 'Components/Icons',
-  component: Eye,
-  tags: ['autodocs'],
   argTypes: {
     outline: {
-      options: [true, false],
       control: { type: 'radio' },
+      options: [true, false],
     },
   },
+  component: Eye,
+  tags: ['autodocs'],
+  title: 'Components/Icons',
 } satisfies Meta<typeof Eye>
 
 export default meta

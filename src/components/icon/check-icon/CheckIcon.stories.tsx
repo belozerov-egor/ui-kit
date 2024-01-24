@@ -3,9 +3,9 @@ import { Meta, StoryObj } from '@storybook/react'
 import { CheckIcon } from './CheckIcon'
 
 const meta = {
-  title: 'Components/Icons',
   component: CheckIcon,
   tags: ['autodocs'],
+  title: 'Components/Icons',
 } satisfies Meta<typeof CheckIcon>
 
 export default meta

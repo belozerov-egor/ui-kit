@@ -3,9 +3,9 @@ import { Meta, StoryObj } from '@storybook/react'
 import { ArrowIosForward } from './ArrowIosForward'
 
 const meta = {
-  title: 'Components/Icons',
   component: ArrowIosForward,
   tags: ['autodocs'],
+  title: 'Components/Icons',
 } satisfies Meta<typeof ArrowIosForward>
 
 export default meta

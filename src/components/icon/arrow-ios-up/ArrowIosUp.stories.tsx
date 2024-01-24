@@ -1,14 +1,14 @@
 import { Meta, StoryObj } from '@storybook/react'
 
-import { Search } from './Search'
+import { ArrowIosUp } from './ArrowIosUp'
 
 const meta = {
-  component: Search,
+  component: ArrowIosUp,
   tags: ['autodocs'],
   title: 'Components/Icons',
-} satisfies Meta<typeof Search>
+} satisfies Meta<typeof ArrowIosUp>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const SearchIcon: Story = {}
+export const ArrowIosUpIcon: Story = {}

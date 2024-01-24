@@ -3,10 +3,10 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { TextField } from './TextField'
 
 const meta = {
-  title: 'Components/TextField',
+  argTypes: { onChange: { action: 'text changes' } },
   component: TextField,
   tags: ['autodocs'],
-  argTypes: { onChange: { action: 'text changes' } },
+  title: 'Components/TextField',
 } satisfies Meta<typeof TextField>
 
 export default meta
@@ -14,55 +14,55 @@ type Story = StoryObj<typeof meta>
 
 export const TextFieldDefault: Story = {
   args: {
+    disableValue: false,
     label: 'Default',
     placeholder: 'Default',
-    value: '',
     type: 'default',
-    disableValue: false,
+    value: '',
   },
 }
 export const TextFieldDefaultError: Story = {
   args: {
+    disableValue: false,
+    errorMessage: 'Error!',
     placeholder: 'Default',
     type: 'default',
     value: '',
-    disableValue: false,
-    errorMessage: 'Error!',
   },
 }
 export const TextFieldPassword: Story = {
   args: {
+    disableValue: false,
     label: 'Password',
     placeholder: 'Password',
     type: 'password',
     value: 'Password',
-    disableValue: false,
   },
 }
 export const TextFieldPasswordError: Story = {
   args: {
+    disableValue: false,
+    errorMessage: 'Error!',
     placeholder: 'Password',
     type: 'password',
     value: 'Some Error',
-    disableValue: false,
-    errorMessage: 'Error!',
   },
 }
 export const TextFieldSearch: Story = {
   args: {
+    disableValue: false,
     label: 'Search',
     placeholder: 'Search',
     type: 'searchType',
     value: '',
-    disableValue: false,
   },
 }
 export const TextFieldSearchError: Story = {
   args: {
+    disableValue: false,
+    errorMessage: 'Error!',
     placeholder: 'Search',
     type: 'searchType',
     value: '',
-    disableValue: false,
-    errorMessage: 'Error!',
   },
 }
