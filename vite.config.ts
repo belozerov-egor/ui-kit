@@ -21,4 +21,10 @@ export default defineConfig({
     },
     target: 'esnext',
   },
+  css: {
+    modules: {
+      generateScopedName: '[name]__[local]___[hash:base64:5]',
+      scopeBehaviour: 'local',
+    },
+  },
 })

@@ -1,11 +1,11 @@
 {
   "name": "@belozerov-egor/ui-libs",
   "private": false,
-  "version": "0.0.14",
+  "version": "0.0.15",
   "license": "MIT",
   "type": "module",
   "main": "dist/index.js",
-  "module": "dist/index.js",
+  "module": "src/index.ts",
   "types": "dist/index.d.ts",
   "files": [
     "dist",
