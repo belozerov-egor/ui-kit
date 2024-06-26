@@ -1,6 +1,7 @@
 import { resolve } from 'path'
 
 import { defineConfig } from 'vite'
+import { libInjectCss } from 'vite-plugin-lib-inject-css'
 
 import { dependencies, devDependencies } from './package.json'
 // https://vitejs.dev/config/
@@ -27,4 +28,5 @@ export default defineConfig({
       scopeBehaviour: 'local',
     },
   },
+  plugins: [libInjectCss()],
 })
