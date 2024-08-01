@@ -24,9 +24,9 @@ export const CheckBox = (props: CheckBoxProps) => {
       variant={'regular14'}
     >
       <Checkbox.Root
-        checked={!checked}
+        checked={checked}
         className={`${s.checkboxRoot} ${checked ? s.active : s.unActive}`}
-        disabled={!disabled}
+        disabled={disabled}
         onCheckedChange={onChange}
         {...rest}
       >
