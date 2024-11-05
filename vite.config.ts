@@ -3,7 +3,7 @@ import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
 
-import { dependencies, devDependencies } from './package.json'
+import { dependencies, devDependencies, peerDependencies } from './package.json'
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
@@ -18,7 +18,12 @@ export default defineConfig({
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ['jsx-runtime.js', ...Object.keys(dependencies), ...Object.keys(devDependencies)],
+      external: [
+        ...Object.keys(peerDependencies),
+        ...Object.keys(dependencies),
+        ...Object.keys(devDependencies),
+        'react/jsx-runtime',
+      ],
     },
     target: 'esnext',
   },
