@@ -1,9 +1,11 @@
 import { resolve } from 'path'
 
+import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
+import svgr from 'vite-plugin-svgr'
 
-import { dependencies, devDependencies, peerDependencies } from './package.json'
+import { dependencies, devDependencies } from './package.json'
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
@@ -18,20 +20,15 @@ export default defineConfig({
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: [
-        ...Object.keys(peerDependencies),
-        ...Object.keys(dependencies),
-        ...Object.keys(devDependencies),
-        'react/jsx-runtime',
-      ],
+      external: ['jsx-runtime.js', ...Object.keys(dependencies), ...Object.keys(devDependencies)],
     },
     target: 'esnext',
   },
   css: {
+    devSourcemap: true,
     modules: {
-      generateScopedName: '[name]__[local]___[hash:base64:5]',
-      scopeBehaviour: 'local',
+      generateScopedName: '[name]_[local]_[hash:base64:5]',
     },
   },
-  plugins: [libInjectCss()],
+  plugins: [libInjectCss(), react(), svgr()],
 })
