@@ -1,3 +1,5 @@
+@use 'src/styles/colors' as colors;
+
 .root {
   display: flex;
   gap: 25px;
@@ -22,7 +24,7 @@
 
   font-size: 0.875rem;
   line-height: 1.5rem;
-  color: var(--color-light-100);
+  color: colors.$color-light-100;
 
   border-radius: 4px;
 }
@@ -33,8 +35,8 @@
   cursor: pointer;
 
   &:focus-visible {
-    outline: var(--color-accent-700);
-    stroke: var(--color-accent-700);
+    outline: colors.$color-accent-700;
+    stroke: colors.$color-accent-700;
     stroke-width: 2px;
   }
 
@@ -44,12 +46,12 @@
   }
 
   &:hover:not(&:disabled) {
-    background-color: var(--color-dark-500);
+    background-color: colors.$color-dark-500;
   }
 
   &.selected {
-    color: var(--color-dark-900);
-    background-color: var(--color-light-100);
+    color: colors.$color-dark-900;
+    background-color: colors.$color-light-100;
   }
 }
 
@@ -62,7 +64,7 @@
   height: 1rem;
 
   .item:disabled & {
-    stroke: var(--color-dark-100) !important;
+    stroke: colors.$color-dark-100 !important;
   }
 }
 

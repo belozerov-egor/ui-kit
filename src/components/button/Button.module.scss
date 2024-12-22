@@ -1,3 +1,6 @@
+@use 'src/styles/colors' as colors;
+@use 'src/styles/typography' as typography;
+
 @mixin button() {
   all: unset;
 
@@ -11,10 +14,10 @@
 
   padding: 0.38rem 1.5rem;
 
-  font-size: var(--font-size-m);
-  font-weight: var(--font-weight-l);
-  line-height: var(--line-height-m);
-  color: var(--color-light-100);
+  font-size: typography.$font-size-m;
+  font-weight: typography.$font-weight-l;
+  line-height: typography.$line-height-m;
+  color: colors.$color-light-100;
   text-align: center;
   text-decoration: none;
 
@@ -23,7 +26,7 @@
 
   &:focus-visible,
   &:focus {
-    outline: 2px solid var(--color-accent-700);
+    outline: 2px solid colors.$color-accent-700;
   }
 
   &:disabled {
@@ -34,101 +37,101 @@
 .primary {
   @include button;
 
-  background-color: var(--color-accent-500);
+  background-color: colors.$color-accent-500;
 
   &:hover {
-    background-color: var(--color-accent-100);
+    background-color: colors.$color-accent-100;
   }
 
   &:focus {
-    background-color: var(--color-accent-500);
+    background-color: colors.$color-accent-500;
   }
 
   &:active {
-    background-color: var(--color-accent-700);
+    background-color: colors.$color-accent-700;
   }
 
   &:disabled {
-    color: var(--color-light-900);
-    background-color: var(--color-accent-900);
+    color: colors.$color-light-900;
+    background-color: colors.$color-accent-900;
   }
 }
 
 .secondary {
   @include button;
 
-  background-color: var(--color-dark-300);
+  background-color: colors.$color-dark-300;
 
   &:hover {
-    background-color: var(--color-dark-100);
+    background-color: colors.$color-dark-100;
   }
 
   &:active {
-    background-color: var(--color-dark-500);
+    background-color: colors.$color-dark-500;
   }
 
   &:disabled {
-    color: var(--color-light-900);
-    background-color: var(--color-dark-500);
+    color: colors.$color-light-900;
+    background-color: colors.$color-dark-500;
   }
 
   &:focus-visible,
   &:focus {
-    background-color: var(--color-dark-300);
-    outline: 1px solid var(--color-accent-300);
+    background-color: colors.$color-dark-300;
+    outline: 1px solid colors.$color-accent-300;
   }
 }
 
 .outline {
   @include button;
 
-  color: var(--color-accent-700);
-  outline: 1px solid var(--color-accent-700);
+  color: colors.$color-accent-700;
+  outline: 1px solid colors.$color-accent-700;
 
   &:hover {
-    color: var(--color-accent-100);
-    outline: 1px solid var(--color-accent-100);
+    color: colors.$color-accent-100;
+    outline: 1px solid colors.$color-accent-100;
   }
 
   &:active {
-    color: var(--color-accent-700);
-    outline: 1px solid var(--color-accent-700);
+    color: colors.$color-accent-700;
+    outline: 1px solid colors.$color-accent-700;
   }
 
   &:disabled {
-    color: var(--color-accent-900);
-    outline: 1px solid var(--color-accent-900);
+    color: colors.$color-accent-900;
+    outline: 1px solid colors.$color-accent-900;
   }
 
   &:focus-visible,
   &:focus {
-    color: var(--color-accent-900);
-    outline: 2px solid var(--color-accent-900);
+    color: colors.$color-accent-900;
+    outline: 2px solid colors.$color-accent-900;
   }
 }
 
 .text {
   @include button;
 
-  color: var(--color-accent-500);
+  color: colors.$color-accent-500;
   border: none;
 
   &:hover {
-    color: var(--color-accent-100);
+    color: colors.$color-accent-100;
   }
 
   &:active {
-    color: var(--color-accent-700);
+    color: colors.$color-accent-700;
   }
 
   &:disabled {
-    color: var(--color-accent-900);
+    color: colors.$color-accent-900;
   }
 
   &:focus-visible,
   &:focus {
-    color: var(--color-accent-500);
-    outline: 2px solid var(--color-accent-700);
+    color: colors.$color-accent-500;
+    outline: 2px solid colors.$color-accent-700;
   }
 }
 

@@ -1,3 +1,5 @@
+@use 'src/styles/colors' as colors;
+
 .dropDownBlock {
   button {
     all: unset;
@@ -18,8 +20,8 @@
   padding: 0.75rem;
 
   opacity: 0.8;
-  background-color: var(--color-dark-700);
-  border: 1px solid var(--color-dark-300);
+  background-color: colors.$color-dark-700;
+  border: 1px solid colors.$color-dark-300;
   border-radius: 0.25rem;
 }
 
@@ -55,7 +57,7 @@
 
   .info {
     .email {
-      color: var(--color-dark-100);
+      color: colors.$color-dark-100;
     }
   }
 }
@@ -63,12 +65,12 @@
 .dropdownMenuSeparator {
   height: 1px;
   margin: 0.75rem 0;
-  background-color: var(--color-dark-300);
+  background-color: colors.$color-dark-300;
 }
 
 .arrowBox {
-  fill: var(--color-dark-700);
-  stroke: var(--color-dark-300);
+  fill: colors.$color-dark-700;
+  stroke: colors.$color-dark-300;
   stroke-width: 2px;
 }
 
@@ -81,8 +83,8 @@
   width: 7px;
   height: 7px;
 
-  background-color: var(--color-dark-700);
-  border: 1px solid var(--color-dark-300);
+  background-color: colors.$color-dark-700;
+  border: 1px solid colors.$color-dark-300;
   border-top: none;
   border-left: none;
 }
@@ -90,7 +92,7 @@
 .activeTrigger {
   svg {
     path {
-      fill: var(--color-accent-500);
+      fill: colors.$color-accent-500;
     }
   }
 }

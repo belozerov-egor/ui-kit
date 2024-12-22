@@ -1,5 +1,7 @@
+@use 'src/styles/colors' as colors;
+
 .cardBlock {
-  background: var(--color-dark-500);
-  border: 1px solid var(--color-dark-300);
+  background: colors.$color-dark-500;
+  border: 1px solid colors.$color-dark-300;
   border-radius: 1px;
 }
